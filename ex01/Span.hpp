@@ -6,7 +6,7 @@
 /*   By: ccarro-d <ccarro-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 21:14:43 by ccarro-d          #+#    #+#             */
-/*   Updated: 2026/10/05 00:24:09 by ccarro-d         ###   ########.fr       */
+/*   Updated: 2026/10/05 22:26:41 by ccarro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 #define SPAN_HPP
 
 #include <vector>
+#include <iterator>
 #include <exception>
 
 class Span
 {
 	private:
-		unsigned int maxSize_;
+		std::vector<int>::size_type maxSize_; // Es un tipo de dato entero sin signo (unsigned) que se utiliza para representar el tamaño o los índices de un std::vector<int>
 		std::vector<int> numbers_;
-		void addRandomNumbersToRange(std::vector<int>::const_iterator first, std::vector<int>::const_iterator last);
 		
 	public:
 		Span();
@@ -31,8 +31,10 @@ class Span
 		Span& operator=(const Span& other);
 		
 		void addNumber(int toAdd);
-		int shortestSpan() const; // Solo debe recuperar información, no modificar el contenedor
-		int longestSpan() const; // Solo debe recuperar información, no modificar el contenedor
+		unsigned int shortestSpan() const; // Solo debe recuperar información, no modificar el contenedor. Unsigned int porque la diferencia siempre va a ser positiva y por si nos hacen una diferencia que sea mayor que INT_MAX (ej: INT_MAX - INT_MIN)
+		unsigned int longestSpan() const; // Solo debe recuperar información, no modificar el contenedor. Unsigned int porque la diferencia siempre va a ser positiva y por si nos hacen una diferencia que sea mayor que INT_MAX (ej: INT_MAX - INT_MIN)
+		template <typename Iterator> // Porque podemos recibir un iterator de cualquier tipo de container
+		void addRange(Iterator first, Iterator last);
 		
 		class SpanCapacityException : public std::exception
 		{
@@ -46,5 +48,7 @@ class Span
 				virtual const char *what() const throw();
 		};
 };
+
+#include "Span.tpp"
 
 #endif
