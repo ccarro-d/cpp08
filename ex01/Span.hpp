@@ -6,7 +6,7 @@
 /*   By: ccarro-d <ccarro-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 21:14:43 by ccarro-d          #+#    #+#             */
-/*   Updated: 2026/10/04 23:56:28 by ccarro-d         ###   ########.fr       */
+/*   Updated: 2026/10/05 00:24:09 by ccarro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Span
 	private:
 		unsigned int maxSize_;
 		std::vector<int> numbers_;
+		void addRandomNumbersToRange(std::vector<int>::const_iterator first, std::vector<int>::const_iterator last);
 		
 	public:
 		Span();

@@ -6,13 +6,15 @@
 /*   By: ccarro-d <ccarro-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 23:39:17 by ccarro-d          #+#    #+#             */
-/*   Updated: 2026/10/05 00:13:08 by ccarro-d         ###   ########.fr       */
+/*   Updated: 2026/10/05 00:26:59 by ccarro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <algorithm>
 #include <iterator>
+#include <cstdlib>
+#include <ctime>
 
 Span::Span() : maxSize_(0) {}
 
@@ -86,4 +88,10 @@ int Span::longestSpan() const
 	std::vector<int>::const_iterator min = std::min_element(numbers_.begin(), numbers_.end());
 	std::vector<int>::const_iterator max = std::max_element(numbers_.begin(), numbers_.end());
 	return (*max - *min);
+}
+
+void Span::addRandomNumbersToRange(std::vector<int>::const_iterator first, std::vector<int>::const_iterator last)
+{
+	srand(time(NULL));
+	while (first != last && first != numbers_.end())
 }
