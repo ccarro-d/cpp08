@@ -6,16 +6,16 @@
 /*   By: ccarro-d <ccarro-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 00:13:49 by ccarro-d          #+#    #+#             */
-/*   Updated: 2026/10/05 23:43:42 by ccarro-d         ###   ########.fr       */
+/*   Updated: 2026/10/06 21:00:56 by ccarro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <cstdlib> // Random
+#include <ctime> // Time
 #include <algorithm>
-#include <climits>
+#include <climits> // UINT_MAX
 
 int main()
 {
@@ -44,7 +44,18 @@ int main()
 	limits.addNumber(INT_MIN);
 	limits.addNumber(INT_MAX);
 	std::cout << "limits shortestSpan:  " << limits.shortestSpan() << std::endl;
-	std::cout << "limits longestSpan:  " << limits.longestSpan() << std::endl<< std::endl;
+	std::cout << "limits longestSpan:  " << limits.longestSpan() << std::endl;
+	try
+	{
+		limits.addNumber(2);
+		std::cout << "Extra number added" << std::endl << std::endl;
+		
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl << std::endl;
+	}
+	
 
 	Span empty;
 	try
@@ -55,7 +66,6 @@ int main()
 	{
 		std::cerr << e.what() << '\n';
 	}
-	std::cout << std::endl;
 	
 	try
 	{
@@ -65,11 +75,12 @@ int main()
 	{
 		std::cerr << e.what() << '\n';
 	}
+	std::cout << std::endl << std::endl << std::endl;
 	
 	int	span_size = 10001;
 	if (span_size < 2)
 		return (0);
-	Span rdom = Span(span_size);
+	Span rdom(span_size);
 	std::vector<int> checker;
 	checker.reserve(span_size);
 	unsigned int shortestSpan = -1; // Para unsigned int -1 equivale a UINT_MAX, que es = INT_MAX - INT_MIN;
