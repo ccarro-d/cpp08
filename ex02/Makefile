@@ -5,7 +5,7 @@ CXX         = c++
 CXXFLAGS    = -Wall -Wextra -Werror -std=c++98
 DEPFLAGS    = -MMD -MP
 
-SRC         = main.cpp Span.cpp
+SRC         = main.cpp
 
 OBJDIR      = obj
 OBJ         = $(addprefix $(OBJDIR)/,$(SRC:.cpp=.o))
