@@ -6,7 +6,7 @@
 /*   By: ccarro-d <ccarro-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 20:14:30 by ccarro-d          #+#    #+#             */
-/*   Updated: 2026/10/04 21:13:20 by ccarro-d         ###   ########.fr       */
+/*   Updated: 2026/10/09 19:26:14 by ccarro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(void)
 	}
 	catch (const std::exception& e)
 	{
-		std::cerr << e.what() << "in vector v" << std::endl;
+		std::cout << e.what() << "in vector v" << std::endl;
 	}
 	try
 	{
@@ -42,7 +42,7 @@ int	main(void)
 	}
 	catch (const std::exception& e)
 	{
-		std::cerr << e.what() << "in vector v" << std::endl;
+		std::cout << e.what() << "in vector v" << std::endl;
 	}
 	try
 	{
@@ -53,7 +53,7 @@ int	main(void)
 	}
 	catch (const std::exception& e)
 	{
-		std::cerr << e.what() << "in vector v" << std::endl;
+		std::cout << e.what() << "in vector v" << std::endl;
 	}
 
 	std::list<int> l; // Caso list
@@ -69,7 +69,7 @@ int	main(void)
 	}
 	catch (const std::exception& e)
 	{
-		std::cerr << e.what() << "in list l" << std::endl;
+		std::cout << e.what() << "in list l" << std::endl;
 	}
 
 	std::deque<int> d; // Caso deque
@@ -85,7 +85,7 @@ int	main(void)
 	}
 	catch (const std::exception& e)
 	{
-		std::cerr << e.what() << "in deque d" << std::endl;
+		std::cout << e.what() << "in deque d" << std::endl;
 	}
 	
 	std::vector<int> w; // Caso límite container vacío
@@ -96,7 +96,7 @@ int	main(void)
 	}
 	catch (const std::exception& e)
 	{
-		std::cerr << e.what() << "in vector w" << std::endl;
+		std::cout << e.what() << "in vector w" << std::endl;
 	}
 	
 	return (0);

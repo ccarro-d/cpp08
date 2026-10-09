@@ -6,7 +6,7 @@
 /*   By: ccarro-d <ccarro-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 00:13:49 by ccarro-d          #+#    #+#             */
-/*   Updated: 2026/10/06 21:00:56 by ccarro-d         ###   ########.fr       */
+/*   Updated: 2026/10/09 19:26:11 by ccarro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << std::endl << std::endl;
+		std::cout << e.what() << std::endl << std::endl;
 	}
 	
 
@@ -64,7 +64,7 @@ int main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << '\n';
 	}
 	
 	try
@@ -73,7 +73,7 @@ int main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << '\n';
 	}
 	std::cout << std::endl << std::endl << std::endl;
 	
