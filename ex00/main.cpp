@@ -6,7 +6,7 @@
 /*   By: ccarro-d <ccarro-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 20:14:30 by ccarro-d          #+#    #+#             */
-/*   Updated: 2026/10/09 19:26:14 by ccarro-d         ###   ########.fr       */
+/*   Updated: 2026/10/09 22:50:33 by ccarro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,11 @@ int	main(void)
 	v.push_back(i++);
 	try
 	{
-		std::vector<int>::const_iterator it = easyfind(v, 2);
+		std::vector<int>::iterator it = easyfind(v, 2);
 		std::cout << "Value " << *it << " found in vector v" << std::endl; 
+		std::cout << "Modifying iterator content" <<  std::endl;
+		*it *= 2; 
+		std::cout << "Value in iterator changed to " << *it << std::endl; 
 	}
 	catch (const std::exception& e)
 	{
